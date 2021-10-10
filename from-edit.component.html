@@ -1,0 +1,42 @@
+<div id="dispaly" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style='background-color: #dc3545;'>
+                <h2 class="modal-title">Edit Product</h2>
+                <button type="button" class="close btn-close" (click)="close()" aria-label="Close">
+                    <span style='font-size:2rem' aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formGroup">
+                    <div class="form-group">
+                        <label for='ii' [innerText]="'title'"></label>
+                        <input id='ii' class="form-control valid" type="text" formControlName="title" placeholder="productName" required />
+                    </div>
+                    <div class="form-group">
+                        <label [innerText]="'price'"></label>
+                        <input class=" form-control valid" type="number" formControlName="price" placeholder="price" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label [innerText]="'desc'"></label>
+                        <input class="valid form-control" type="text" formControlName="desc" placeholder="description">
+                    </div>
+                    <div class="form-group">
+                        <label [innerText]="'img'"></label>
+                        <input class="form-control valid" type="text" formControlName="img">
+                    </div>
+
+
+                    <!-- <button  type="submit" class="btn-danger" (click)="save(formGroup.value)">save</button> -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" 
+                    (click)="save(formGroup.value)">Save</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button>-->
+    <button type="button" class="btn btn-secondary"(click)="close()" data-dismiss="modal">Close</button> 
+            </div>
+        </div>
+    </div>
+</div>
